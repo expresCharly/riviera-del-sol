@@ -640,3 +640,64 @@ header nav a[aria-current="location"]::after { transform: scaleX(1); }
 }
 .mobile-nav a[aria-current="location"] { color: #916323; }
 .mobile-nav a::after { bottom: 5px; width: 34px; }
+
+/* Shared layout indicator travels between the active navigation links. */
+.site-header nav a::after { display: none; }
+.header-contact { position: relative; }
+.header-contact[aria-current="location"] { text-decoration: none; }
+.nav-sliding-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: #aa7b36;
+  pointer-events: none;
+}
+.header-contact .nav-sliding-line { left: 21px; right: 21px; bottom: 7px; }
+.mobile-nav .nav-sliding-line { bottom: 5px; right: auto; width: 34px; }
+
+/* Touch-friendly navigation and layouts down to narrow phone screens. */
+@media (max-width: 900px) {
+  .mobile-nav { border-top: 1px solid #b99d7025; box-shadow: 0 16px 24px #9b753512; }
+  .mobile-nav a { min-height: 56px; padding: 14px 0; }
+  .mobile-link-label { position: relative; display: inline-block; }
+  .mobile-nav .mobile-link-label { color: inherit; }
+  .mobile-nav .nav-sliding-line { bottom: -5px; width: auto; left: 0; right: 0; }
+  .menu-toggle[aria-expanded="true"] { background: #eed3a6; border-color: #c9a56d; }
+  .hero-grid, .project-split, .location-split { min-width: 0; }
+  .hero-primary, .map-link, .contact-link { min-height: 44px; }
+  .hero-secondary, .footer-inner nav a { min-height: 44px; display: inline-flex; align-items: center; }
+}
+@media (max-width: 600px) {
+  .hero-title { font-size: clamp(36px, 9.5vw, 54px); }
+  .hero-actions { align-items: stretch; }
+  .hero-primary { display: inline-flex; justify-content: center; align-items: center; }
+  .hero-primary span { flex-shrink: 0; }
+  .project-copy h2, .location-copy h2 { font-size: clamp(28px, 8vw, 34px); }
+  .project-details h3 { font-size: 19px; }
+  .gallery-caption h3 { line-height: 1.3; }
+  .gallery-stage .gallery-arrow { opacity: .85; }
+  .project-visual .gallery-stage .gallery-dots { opacity: .85; }
+  .hero-figure figcaption { line-height: 1.6; }
+  .finance-card { min-width: 0; }
+  .finance-card p:first-child { font-size: 32px; }
+  .section-eyebrow { line-height: 1.7; letter-spacing: 1.4px; }
+  .contact-link { flex-wrap: wrap; }
+  .footer-inner nav { column-gap: 24px; row-gap: 0; }
+}
+@media (max-width: 360px) {
+  .header-inner { padding-inline: 12px; gap: 8px; }
+  .brand { gap: 6px; }
+  .brand-name { font-size: 17px; }
+  .brand-caption { font-size: 6.5px; letter-spacing: 1.2px; }
+  .brand-symbol { width: 27px; }
+  .menu-toggle { padding-inline: 10px; gap: 5px; }
+  .hero-split { padding-inline: 16px; }
+  .editorial-section, .finance-section, .contact-section, .site-footer { padding-inline: 16px; }
+  .hero-actions { flex-direction: column; gap: 6px; }
+  .hero-secondary { align-self: flex-start; }
+  .hero-facts { gap: 20px; }
+  .location-action { white-space: normal; text-align: center; line-height: 1.6; }
+}
