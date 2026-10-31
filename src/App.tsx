@@ -151,7 +151,7 @@ export default function App() {
       </motion.section>
       <motion.section {...entrada} id="financiamiento" className="finance-section">
         <div className="mx-auto max-w-7xl"><p className="section-eyebrow">02 / Condiciones de preventa</p><h2 className="mt-3 text-4xl font-semibold">Tu terreno, paso a paso</h2><p className="mt-4">Los 6 primeros lotes participan en la rifa; los demás están disponibles en preventa. Precio por lote de aproximadamente 500 m². Sin intereses, sujeto a contrato.</p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[['$800,000', 'MXN · precio de preventa'], ['$240,000', 'MXN · enganche del 30%'], ['$560,000', 'MXN · saldo restante'], ['$10,000', 'MXN · 56 mensualidades']].map(([valor, etiqueta], i) => <motion.div {...entrada} transition={{ duration: reducirMovimiento ? 0 : 1.25, delay: reducirMovimiento ? 0 : i * 0.16, ease: suave }} key={valor} className="finance-card"><p className="text-3xl font-semibold text-estaca">{valor}</p><p className="mt-2">{etiqueta}</p></motion.div>)}</div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[['$800,000', 'MXN · precio de preventa'], ['$240,000', 'MXN · enganche del 30%'], ['$560,000', 'MXN · saldo restante'], ['$10,000', 'MXN · 56 mensualidades']].map(([valor, etiqueta], i) => <motion.div {...entrada} transition={{ duration: reducirMovimiento ? 0 : 1.25, delay: reducirMovimiento ? 0 : i * 0.16, ease: suave }} key={valor} className="finance-card"><p className="text-3xl font-semibold text-azul">{valor}</p><p className="mt-2">{etiqueta}</p></motion.div>)}</div>
           <p className="mt-8">Precio fuera de preventa: <strong>$1,000,000 MXN por lote.</strong></p><p className="mt-3 max-w-4xl text-sm text-white/70">Este precio futuro no representa una garantía de plusvalía. Vigencia, disponibilidad, escrituración, impuestos, fechas y términos contractuales pendientes de definición. Referencia documental: proyecto revisado del 23 de octubre de 2026.</p>
         </div>
       </motion.section>
@@ -223,14 +223,33 @@ export default function App() {
       </motion.section>
       <motion.section {...entrada} id="contacto" className="contact-section"><div className="contact-inner"><div><p className="section-eyebrow">05 / El siguiente paso</p><h2 className="text-3xl font-semibold">Información de ventas</h2><p className="mt-4 max-w-2xl">Contáctanos para consultar disponibilidad y conocer los términos de preventa.</p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <a href="tel:+523922158413" className="contact-link">México: +52 392 215 8413 <span aria-hidden="true">↗</span></a>
+              <a href="tel:+523922158412" className="contact-link">México: +52 392 215 8412 <span aria-hidden="true">↗</span></a>
               <a href="tel:+19369669202" className="contact-link">USA: +1 936 966 9202 <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div className="deposit-card min-w-0 rounded border border-[#b99d7040] bg-[#fffdf780] p-6">
             <h3 className="text-xl font-semibold">Datos para depósito</h3>
+            <h4 className="mt-4 font-semibold">México</h4>
             <p className="mt-3">Banco Azteca</p>
             <p className="mt-2 break-words text-xl font-semibold tabular-nums" aria-label="Número para depósitos">4027 6600 7393 9318</p>
+            <div className="mt-6 border-t border-[#b99d7040] pt-4">
+              <h4 className="font-semibold">USA</h4>
+              <p className="mt-3">Responsable: Lic. Carlos Zúñiga Hernández</p>
+              <dl className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                <div>
+                  <dt>Chime Bank</dt>
+                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">156141278499</dd>
+                </div>
+                <div>
+                  <dt>PNC Bank</dt>
+                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">3175587054</dd>
+                </div>
+                <div>
+                  <dt>Zelle</dt>
+                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">9369669202</dd>
+                </div>
+              </dl>
+            </div>
           </div></div></motion.section>
     </main>
     <footer className="site-footer"><div className="footer-inner"><div><a href="#top" className="footer-brand">Riviera del Sol<span>RESIDENCIAL PRIVADO · AGUASCALIENTES</span></a><p className="footer-note">Propuesta conceptual. Las imágenes no sustituyen planos aprobados. Lotificación, acceso, vialidades y permisos pendientes de validación.</p></div><nav aria-label="Navegación del pie de página"><a href="#plano">El proyecto ↗</a><a href="#ubicacion">Ubicación ↗</a><a href="#top">Volver al inicio ↑</a></nav></div><div className="footer-bottom"><span>Un espacio para tu próximo hogar.</span><span>Proyecto conceptual · Riviera del Sol</span></div></footer>
