@@ -701,3 +701,79 @@ header nav a[aria-current="location"]::after { transform: scaleX(1); }
   .hero-facts { gap: 20px; }
   .location-action { white-space: normal; text-align: center; line-height: 1.6; }
 }
+
+.hero-carousel-stage { aspect-ratio: 16 / 9; }
+.hero-carousel-stage .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-carousel-arrow { position: absolute; z-index: 2; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #faf9f5e8; color: #172046; font-size: 22px; cursor: pointer; }
+.hero-carousel-prev { left: 12px; }
+.hero-carousel-next { right: 12px; }
+.hero-carousel-controls { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; }
+.hero-carousel-dots { display: flex; gap: 4px; }
+.hero-carousel-dots button { width: 36px; height: 28px; cursor: pointer; background: transparent; display: grid; place-items: center; }
+.hero-carousel-dots button::after { content: ''; width: 24px; height: 5px; border-radius: 5px; background: #17204640; }
+.hero-carousel-dots button[aria-pressed='true']::after { background: #172046; }
+.hero-carousel-pause { padding: 6px 12px; font-size: 12px; color: #172046; cursor: pointer; }
+.hero-carousel-controls button:focus-visible, .hero-carousel-arrow:focus-visible { outline: 2px solid #98651d; outline-offset: 3px; }
+
+.raffle-section { background: transparent; }
+.raffle-inner { width: 100%; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; }
+.raffle-info { min-width: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px 48px; align-items: center; }
+.raffle-copy h2 { max-width: 620px; margin-top: 18px; font-size: clamp(30px, 3.4vw, 50px); line-height: 1.12; color: #172046; }
+.raffle-intro { max-width: 580px; margin-top: 24px; font-size: 18px; line-height: 1.8; color: #596471; }
+.raffle-stats { display: flex; gap: 48px; margin-top: 32px; }
+.raffle-stats div { display: flex; flex-direction: column; gap: 8px; }
+.raffle-stats strong { font-size: 40px; font-weight: 500; color: #98651d; }
+.raffle-stats span { font-size: 13px; color: #596471; }
+.raffle-ticket { padding: 40px; border: 1px solid #98651d40; border-radius: 22px; background: #fffcf5; text-align: center; box-shadow: 0 18px 40px #17204608; }
+.raffle-price { margin-top: 18px; color: #172046; font-size: clamp(36px, 4vw, 56px); font-weight: 600; line-height: 1.2; }
+.raffle-price span { font-size: 16px; font-weight: 400; }
+.raffle-divider { display: flex; align-items: center; gap: 16px; margin-top: 18px; color: #98651d; }
+.raffle-divider::before, .raffle-divider::after { content: ''; flex: 1; border-top: 1px dashed #98651d50; }
+.raffle-ticket-note { margin-top: 24px; font-size: 13px; line-height: 1.7; color: #596471; }
+.raffle-note { grid-column: 1 / -1; border-top: 1px solid #98651d30; padding-top: 22px; font-size: 14px; line-height: 1.8; color: #596471; }
+@media (max-width: 900px) {
+  .raffle-inner { grid-template-columns: 1fr; gap: 28px; }
+  .raffle-info { grid-template-columns: minmax(0, 1fr); }
+  .raffle-ticket { padding: 28px 20px; }
+  .raffle-stats { gap: 36px; }
+}
+
+.raffle-gallery { min-width: 0; width: 100%; }
+.raffle-gallery-title { margin-bottom: 20px; font-size: clamp(24px, 3vw, 32px); color: #172046; }
+.raffle-images-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.raffle-image-card { min-width: 0; margin: 0; }
+.raffle-image-card img { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 12px 30px #17204612; transition: transform .4s ease, box-shadow .4s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .raffle-image-card:hover img { transform: translateY(-6px); box-shadow: 0 18px 36px #17204625; }
+}
+@media (max-width: 600px) {
+  .raffle-images-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.raffle-image-button { display: block; width: 100%; padding: 0; border: 0; border-radius: 16px; background: transparent; cursor: zoom-in; }
+.raffle-image-button:focus-visible { outline: 3px solid #98651d; outline-offset: 5px; }
+.raffle-lightbox { position: fixed; inset: 0; margin: auto; width: 100vw; height: 100dvh; max-width: none; max-height: none; padding: 72px 24px 24px; border: 0; background: transparent; }
+.raffle-lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.raffle-lightbox::backdrop { background: #fffaf220; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.raffle-lightbox-arrow { position: absolute; z-index: 1; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: #fffaf2; color: #172046; box-shadow: 0 2px 14px #17204630; cursor: pointer; font-size: 24px; }
+.raffle-lightbox-prev { left: 12px; }
+.raffle-lightbox-next { right: 12px; }
+.raffle-lightbox-arrow:focus-visible { outline: 3px solid #98651d; outline-offset: 4px; }
+.raffle-lightbox-count { position: absolute; top: 22px; left: 24px; padding: 8px 14px; border-radius: 24px; background: #fffaf2; color: #172046; }
+.raffle-lightbox > img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 8px; }
+.raffle-lightbox-close { position: absolute; top: 18px; right: 24px; padding: 10px 18px; border-radius: 24px; background: #fffaf2; color: #172046; cursor: pointer; }
+.raffle-lightbox-close:focus-visible { outline: 3px solid #e8bd77; outline-offset: 4px; }
+
+/* Compact sales layout and matching carousel presentation. */
+.contact-section { min-height: 0; padding-block: 48px; }
+.contact-inner { max-width: 1100px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, 310px); align-items: center; gap: 32px; }
+.contact-section h2 { font-size: clamp(28px, 3vw, 40px); margin-top: 14px; }
+.contact-inner > div { min-width: 0; }
+.contact-link { gap: 20px; padding: 14px 20px; }
+.deposit-card { width: 100%; }
+.project-visual .hero-figure { width: 100%; margin: 0; }
+@media (max-width: 760px) {
+  .contact-section { padding-block: 32px; }
+  .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .deposit-card { max-width: 420px; }
+}

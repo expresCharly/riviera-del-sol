@@ -6,6 +6,7 @@ const ENLACES = [
   { href: '#top', texto: 'Inicio' },
   { href: '#plano', texto: 'El proyecto' },
   { href: '#financiamiento', texto: 'Financiamiento' },
+  { href: '#rifa', texto: 'Rifa' },
   { href: '#ubicacion', texto: 'Ubicación' },
 ]
 
