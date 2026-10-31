@@ -11,7 +11,7 @@ const imagenes = [
   { src: '/imgs/vista-area-de-riviera-del-sol.png', titulo: 'Vista aérea de Riviera del Sol', detalle: 'Perspectiva general del proyecto.' },
   { src: '/imgs/vista-area-de-riviera-del-sol-2.png', titulo: 'Vista aérea de Riviera del Sol 2', detalle: 'Perspectiva general del proyecto.' }, 
   { src: '/imgs/vista-area-de-riviera-del-sol-3.png', titulo: 'Vista aérea de Riviera del Sol 3', detalle: 'Perspectiva general del proyecto.' },
-    { src: '/imgs/vista-area-de-riviera-del-sol-4.png', titulo: 'Vista aérea de Riviera del Sol 3', detalle: 'Perspectiva general del proyecto.' },
+    { src: '/imgs/vista-area-de-riviera-del-sol-4.png', titulo: 'Vista aérea de Riviera del Sol 4', detalle: 'Perspectiva general del proyecto.' },
 
 
 
