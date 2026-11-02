@@ -239,10 +239,14 @@ export default function App() {
                 <div>
                   <dt>Chime Bank</dt>
                   <dd className="mt-1 break-words text-xl font-semibold tabular-nums">156141278499</dd>
+                  <dt className="mt-3 text-sm">Número de ruta (routing number)</dt>
+                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">031101279</dd>
                 </div>
                 <div>
                   <dt>PNC Bank</dt>
                   <dd className="mt-1 break-words text-xl font-semibold tabular-nums">3175587054</dd>
+                  <dt className="mt-3 text-sm">Número de ruta (routing number)</dt>
+                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">083000108</dd>
                 </div>
                 <div>
                   <dt>Zelle</dt>
