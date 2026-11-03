@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Volume2, VolumeX, RotateCcw } from 'lucide-react'
 import guiones from '../../public/audio/guia/guiones.json'
 import guionesEn from '../../public/audio/guia/guiones.en.json'
-import { idiomaGuia } from '@/lib/idiomaGuia'
+import { useIdioma } from '@/lib/Idioma'
 
 const textos = {
   es: { nombre: 'Guía de voz', activar: 'Activar guía de voz', silenciar: 'Silenciar guía', repetir: 'Escuchar sección', cargando: 'Cargando explicación…', escuchando: 'Escuchando explicación', error: 'No se pudo reproducir. Pulsa Escuchar sección para reintentar.', terminada: 'Explicación terminada', ayuda: 'La guía te acompaña al cambiar de sección.' },
@@ -10,7 +10,8 @@ const textos = {
 }
 
 export function GuiaVoz() {
-  const [idioma] = useState(() => idiomaGuia(navigator.languages?.length ? navigator.languages : [navigator.language]))
+  const { idioma } = useIdioma()
+  const idiomaActual = useRef(idioma)
   const texto = textos[idioma]
   const audio = useRef<HTMLAudioElement>(null)
   const habilitada = useRef(false)
@@ -31,7 +32,9 @@ export function GuiaVoz() {
   function reproducir(repetir = false) {
     const player = audio.current
     const id = actual.current
-    if (!player || !habilitada.current || document.hidden || (!repetir && escuchadas.current.has(id))) return
+    const idioma = idiomaActual.current
+    const texto = textos[idioma]
+    if (!player || !habilitada.current || document.hidden || (!repetir && escuchadas.current.has(`${idioma}/${id}`))) return
     if (!repetir && !player.paused && player.getAttribute('src')?.endsWith(`/${id}.mp3`)) return
     detener()
     const intento = version.current
@@ -87,21 +90,31 @@ export function GuiaVoz() {
     else { detener(); setEstado('') }
   }
 
+  useEffect(() => {
+    if (idiomaActual.current === idioma) return
+    detener()
+    idiomaActual.current = idioma
+    setEstado('')
+    if (habilitada.current) reproducir(true)
+  }, [idioma])
+
   const guion = (idioma === 'en' ? guionesEn : guiones).find(({ id }) => id === seccion)!
-  return <aside className="voice-guide" aria-label={texto.nombre} lang={idioma}>
+  return <div className="header-voice-guide" lang={idioma}>
     <audio ref={audio} preload="none" onEnded={() => {
-      escuchadas.current.add(actual.current)
+      escuchadas.current.add(`${idiomaActual.current}/${actual.current}`)
       setEstado(texto.terminada)
     }} />
-    {activa && <div className="voice-guide-detail">
+    {activa && <aside id="voice-guide-detail" className="voice-guide-detail" aria-label={texto.nombre}>
       <strong>{guion.titulo}</strong>
       <p>{guion.texto}</p>
       <span role="status">{estado || texto.ayuda}</span>
       <button type="button" className="voice-guide-replay" onClick={() => reproducir(true)}><RotateCcw size={14} aria-hidden="true" /> {texto.repetir}</button>
-    </div>}
-    <button type="button" className="voice-guide-toggle" aria-pressed={activa} onClick={alternar}>
+    </aside>}
+    <div className="voice-guide-controls">
+    <button type="button" className="header-voice-toggle" aria-pressed={activa} aria-controls="voice-guide-detail" onClick={alternar}>
       {activa ? <VolumeX size={19} aria-hidden="true" /> : <Volume2 size={19} aria-hidden="true" />}
       {activa ? texto.silenciar : texto.activar}
     </button>
-  </aside>
+    </div>
+  </div>
 }
