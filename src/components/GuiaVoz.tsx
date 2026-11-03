@@ -20,6 +20,7 @@ export function GuiaVoz() {
   const version = useRef(0)
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const [activa, setActiva] = useState(false)
+  const [textoVisible, setTextoVisible] = useState(false)
   const [seccion, setSeccion] = useState('top')
   const [estado, setEstado] = useState('')
 
@@ -104,7 +105,7 @@ export function GuiaVoz() {
       escuchadas.current.add(`${idiomaActual.current}/${actual.current}`)
       setEstado(texto.terminada)
     }} />
-    {activa && <aside id="voice-guide-detail" className="voice-guide-detail" aria-label={texto.nombre}>
+    {activa && <aside id="voice-guide-detail" className="voice-guide-detail" aria-label={texto.nombre} hidden={!textoVisible}>
       <strong>{guion.titulo}</strong>
       <p>{guion.texto}</p>
       <span role="status">{estado || texto.ayuda}</span>
@@ -115,6 +116,9 @@ export function GuiaVoz() {
       {activa ? <VolumeX size={19} aria-hidden="true" /> : <Volume2 size={19} aria-hidden="true" />}
       {activa ? texto.silenciar : texto.activar}
     </button>
+    {activa && <button type="button" className="voice-guide-text-toggle" aria-expanded={textoVisible} aria-controls="voice-guide-detail" onClick={() => setTextoVisible((visible) => !visible)}>
+      {idioma === 'es' ? (textoVisible ? 'Ocultar texto' : 'Mostrar texto') : (textoVisible ? 'Hide text' : 'Show text')}
+    </button>}
     </div>
   </div>
 }

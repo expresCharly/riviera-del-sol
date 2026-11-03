@@ -811,6 +811,9 @@ header nav a[aria-current="location"]::after { transform: scaleX(1); }
 .header-voice-guide { position: relative; }
 .header-voice-toggle { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 9px 14px; border-radius: 24px; border: 1px solid #28367a; background: #28367a; color: white; font-size: 13px; cursor: pointer; white-space: nowrap; }
 .header-voice-toggle:hover { background: #172046; }
+.header-voice-guide .voice-guide-controls { flex-direction: column; gap: 0; align-items: stretch; }
+.voice-guide-text-toggle { min-height: 44px; padding: 6px 10px; color: #28367a; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.voice-guide-text-toggle:hover { color: #172046; }
 .header-voice-toggle[aria-pressed="true"] { background: #172046; }
 .header-voice-guide .voice-guide-detail { position: absolute; right: 0; top: calc(100% + 12px); width: min(310px, calc(100vw - 32px)); max-height: 40svh; overflow-y: auto; z-index: 2; }
 @media (min-width: 901px) and (max-width: 1200px) { .header-contact { display: none; } }
