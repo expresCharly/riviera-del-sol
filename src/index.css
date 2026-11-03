@@ -2,6 +2,15 @@
 @import "@fontsource-variable/bricolage-grotesque";
 @import "@fontsource-variable/figtree";
 
+.voice-guide { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 45; width: min(310px, calc(100vw - 36px)); display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.voice-guide-toggle { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 11px 18px; border-radius: 30px; background: #28367a; color: white; border: 1px solid #ffffff66; box-shadow: 0 5px 24px #121a3326; font-size: 14px; cursor: pointer; }
+.voice-guide-toggle:hover { background: #172046; }
+.voice-guide-detail { background: #fff; color: #121a33; padding: 16px; border: 1px solid #d3d9e6; border-radius: 14px; box-shadow: 0 5px 24px #121a3326; font-size: 13px; line-height: 1.5; }
+.voice-guide-detail p { margin: 6px 0 8px; }
+.voice-guide-detail [role="status"] { display: block; color: #4a5470; font-size: 12px; }
+.voice-guide-replay { display: flex; align-items: center; gap: 6px; min-height: 44px; color: #28367a; cursor: pointer; }
+@media (max-width: 600px) { .voice-guide-detail { max-height: 28svh; overflow-y: auto; } }
+
 @theme {
   /* Paleta: azul profundo, hielo y la estaca amarilla de los topógrafos */
   --color-hielo: #f1f4f9;

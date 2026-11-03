@@ -1,0 +1,8 @@
+[
+  { "id": "top", "titulo": "Welcome", "texto": "Welcome to Riviera del Sol. Discover a residential proposal in Aguascalientes, and imagine your future home." },
+  { "id": "plano", "titulo": "The project", "texto": "Explore the project: lots of approximately five hundred square meters and a controlled entrance. These images show a conceptual proposal." },
+  { "id": "financiamiento", "titulo": "Financing", "texto": "Here you can review the presale price, down payment, and monthly installments. Terms are subject to contract." },
+  { "id": "rifa", "titulo": "Raffle", "texto": "Discover the six lots planned for the raffle. The date, rules, and how to purchase entries will be announced soon." },
+  { "id": "ubicacion", "titulo": "Location", "texto": "Explore the reference location in Aguascalientes, beside State Highway one hundred eight, and view the surrounding area on the map." },
+  { "id": "contacto", "titulo": "Contact", "texto": "Would you like to learn more? Contact us with your questions and find out more about Riviera del Sol." }
+]

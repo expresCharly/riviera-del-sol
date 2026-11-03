@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useSlowAnchors } from '@/lib/useSlowAnchors'
 import { AnimatePresence, motion, MotionConfig, useReducedMotion } from 'motion/react'
 import { Header } from '@/sections/Header'
+import { GuiaVoz } from '@/components/GuiaVoz'
 
 const suave = [0.22, 1, 0.36, 1] as const
 const imagenesRifa = ['/imgs/lotes-rifa.png', '/imgs/lotes-rifa-2.png', '/imgs/lotes-rifa-3.png']
@@ -68,6 +69,7 @@ export default function App() {
   const cambiar = (paso: number) => setActual((i) => (i + paso + imagenes.length) % imagenes.length)
   return <MotionConfig reducedMotion="user">
     <Header />
+    <GuiaVoz />
     <dialog ref={visorRifa} className="raffle-lightbox" aria-label="Imagen ampliada de los lotes de la rifa" onCancel={() => setImagenAmpliada(null)} onClose={() => setImagenAmpliada(null)} onClick={(e) => { if (e.target === e.currentTarget) setImagenAmpliada(null) }} onKeyDown={(e) => { if (e.key === 'ArrowLeft') { e.preventDefault(); cambiarImagenAmpliada(-1) } if (e.key === 'ArrowRight') { e.preventDefault(); cambiarImagenAmpliada(1) } }}>
       <button type="button" className="raffle-lightbox-close" onClick={() => setImagenAmpliada(null)} autoFocus aria-label="Cerrar imagen ampliada">Cerrar ×</button>
       <button type="button" className="raffle-lightbox-arrow raffle-lightbox-prev" aria-label="Imagen anterior" onClick={() => cambiarImagenAmpliada(-1)}>←</button>

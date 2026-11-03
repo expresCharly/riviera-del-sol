@@ -1,0 +1,8 @@
+[
+  { "id": "top", "titulo": "Inicio", "texto": "Bienvenido a Riviera del Sol. Descubre una propuesta residencial en Aguascalientes para imaginar tu próximo hogar." },
+  { "id": "plano", "titulo": "El proyecto", "texto": "Explora el proyecto: terrenos de aproximadamente quinientos metros cuadrados y un acceso controlado. Las imágenes muestran una propuesta conceptual." },
+  { "id": "financiamiento", "titulo": "Financiamiento", "texto": "Aquí puedes consultar el precio de preventa, el enganche y las mensualidades. Las condiciones están sujetas a contrato." },
+  { "id": "rifa", "titulo": "Rifa", "texto": "Conoce los seis lotes contemplados para la rifa. La fecha, las bases y la compra de números se anunciarán próximamente." },
+  { "id": "ubicacion", "titulo": "Ubicación", "texto": "Consulta la ubicación de referencia en Aguascalientes, junto a la carretera estatal ciento ocho, y explora sus alrededores en el mapa." },
+  { "id": "contacto", "titulo": "Contacto", "texto": "¿Quieres conocer más? Comunícate con nosotros para resolver tus dudas y recibir información sobre Riviera del Sol." }
+]
