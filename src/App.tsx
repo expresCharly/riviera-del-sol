@@ -234,26 +234,26 @@ export default function App() {
             <h3 className="text-xl font-semibold">{t("Datos para depósito")}</h3>
             <h4 className="mt-4 font-semibold">{t("México")}</h4>
             <p className="mt-3">Banco Azteca</p>
-            <p className="mt-2 break-words text-xl font-semibold tabular-nums" aria-label={t("Número para depósitos")}>4027 6600 7393 9318</p>
+            <p className="mt-2 wrap-break-word text-xl font-semibold tabular-nums" aria-label={t("Número para depósitos")}>4027 6600 7393 9318</p>
             <div className="mt-6 border-t border-[#b99d7040] pt-4">
               <h4 className="font-semibold">USA</h4>
               <p className="mt-3">{t("Responsable: Lic. Carlos Zúñiga Hernández")}</p>
               <dl className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div>
                   <dt>Chime Bank</dt>
-                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">156141278499</dd>
+                  <dd className="mt-1 wrap-break-word text-xl font-semibold tabular-nums">156141278499</dd>
                   <dt className="mt-3 text-sm">{t("Número de ruta (routing number)")}</dt>
-                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">031101279</dd>
+                  <dd className="mt-1 wrap-break-word text-xl font-semibold tabular-nums">031101279</dd>
                 </div>
                 <div>
                   <dt>PNC Bank</dt>
-                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">3175587054</dd>
+                  <dd className="mt-1 wrap-break-word text-xl font-semibold tabular-nums">3175587054</dd>
                   <dt className="mt-3 text-sm">{t("Número de ruta (routing number)")}</dt>
-                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">083000108</dd>
+                  <dd className="mt-1 wrap-break-word text-xl font-semibold tabular-nums">083000108</dd>
                 </div>
                 <div>
                   <dt>Zelle</dt>
-                  <dd className="mt-1 break-words text-xl font-semibold tabular-nums">9369669202</dd>
+                  <dd className="mt-1 wrap-break-word text-xl font-semibold tabular-nums">9369669202</dd>
                 </div>
               </dl>
             </div>
